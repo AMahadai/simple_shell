@@ -32,7 +32,7 @@ for (i = 0; src[i]; i++)
 dest[i] = src[i];
 }
 dest[i] = '\0';
-return dest;
+return (dest);
 }
 /**
 * _strdup - Duplicates a string.
@@ -47,12 +47,12 @@ int i, len;
 len = _strlen(str);
 dup = malloc(sizeof(char) * (len + 1));
 if (dup == NULL)
-return NULL;
+return (NULL);
 for (i = 0; i <= len; i++)
 {
 dup[i] = str[i];
 }
-return dup;
+return (dup);
 }
 /**
 * _strlen - Computes the length of a string.
@@ -65,5 +65,5 @@ int _strlen(char *str)
 int len;
 for (len = 0; str[len]; len++)
 ;
-return len;
+return (len);
 }
