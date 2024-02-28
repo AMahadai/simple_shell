@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * main - Entry point for the shell program
  * @argc: The number of command-line arguments
@@ -9,21 +8,17 @@
 int main(int argc, char *argv[])
 {
     info_t info[] = { INFO_INIT }; // Initialize info_t struct
-
     int fd = 2; // Default file descriptor for input
-
     // Assembly code to modify fd
     asm ("mov %1, %0\n\t"
          "add $3, %0"
          : "=r" (fd)
          : "r" (fd));
-
     // Check if a file argument is provided
     if (argc == 2)
     {
         // Open the file in read-only mode
         fd = open(argv[1], O_RDONLY);
-
         // Check for errors in file opening
         if (fd == -1)
         {
@@ -41,7 +36,6 @@ int main(int argc, char *argv[])
             }
             return (EXIT_FAILURE);
         }
-
         // Set the file descriptor in info struct
         info->readfd = fd;
     }
@@ -49,9 +43,7 @@ int main(int argc, char *argv[])
     // Populate environment list and read history
     populate_env_list(info);
     read_history(info);
-
-    // Call the shell function with command-line arguments
+    /* Call the shell function with command-line arguments*/
     hsh(info, argv);
-
     return (EXIT_SUCCESS);
 }
