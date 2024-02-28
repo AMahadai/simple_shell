@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * saveCommandHistory - Saves the command history to a specified file.
  * @historyHead: Pointer to the head of the command history list.
@@ -24,7 +23,6 @@ int saveCommandHistory(CommandHistory *historyHead, const char *filePath)
     fclose(file);
     return 1;
 }
-
 /**
  * loadCommandHistory - Loads the command history from a specified file.
  * @historyHead: Double pointer to the head of the command history list.
@@ -99,4 +97,3 @@ void freeCommandHistory(CommandHistory *historyHead)
         free(temp);
     }
 }
-
