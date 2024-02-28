@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * shell_loop - Main loop for the shell
  * @env: The environment variables
