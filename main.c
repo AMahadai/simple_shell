@@ -7,8 +7,8 @@
 */
 int main(int argc, char *argv[])
 {
-info_t info[] = { INFO_INIT }; // Initialize info_t struct
-int fd = 2; // Default file descriptor for input
+info_t info[] = { INFO_INIT }; /* Initialize info_t struct*/
+int fd = 2; /* Default file descriptor for input*/
 /* Assembly code to modify*/
 asm ("mov %1, %0\n\t"
 "add $3, %0"
